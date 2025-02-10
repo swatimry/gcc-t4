@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git https://github.com/swatimry/gcc-t4.git
+                git 'https://github.com/swatimry/gcc-t4.git'
             }
         }
         stage('Build') {
