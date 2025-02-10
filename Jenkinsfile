@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/swatimry/gcc-t4.git'
+                git branch: 'main', url: 'https://github.com/swatimry/gcc-t4.git'
             }
         }
         stage('Build') {
             steps {
-                sh 'make'
+                bat 'make'  // Use `sh 'make'` for Linux
             }
         }
         stage('Clean') {
             steps {
-                sh 'make clean'
+                bat 'make clean'  // Use `sh 'make clean'` for Linux
             }
         }
     }
