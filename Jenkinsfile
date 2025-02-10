@@ -8,12 +8,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                bat 'make'  // Use `sh 'make'` for Linux
+                bat 'g++ -o hello main.cpp'  
             }
         }
-        stage('Clean') {
+        stage('Run') {
             steps {
-                bat 'make clean'  // Use `sh 'make clean'` for Linux
+                bat '.\\hello' 
             }
         }
     }
